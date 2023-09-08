@@ -33,7 +33,7 @@ global.eror = 'Terjadi Kesalahan Coba Lagi Nanti!'
 global.multiplier = 69 
 // Apikey
 global.rose = 'fahrul76' //api.itsrose.life
-global.xyro = '7nSF7vjMdE'// api.xyroinee.xyz
+global.xyro = 'ASjKWQpFVz'// api.xyroinee.xyz
 // Catatan : Jika Mau Work Fiturnya
 // Masukan Apikeymu
 // Gapunya Apikey? Ya Daftar
@@ -46,7 +46,7 @@ global.APIs = {
 
 /*Apikey*/
 global.APIKeys = {
-    "https://api.xyroinee.xyz": "7nSF7vjMdE",
+    "https://api.xyroinee.xyz": "ASjKWQpFVz",
 }
 
 let file = fileURLToPath(import.meta.url)
