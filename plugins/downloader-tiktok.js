@@ -4,7 +4,7 @@ let handler = async (m, { conn, usedPrefix, args, command, text }) => {
 if (!text) throw `Linknya Mana?`
 m.reply(wait)
 try {
-  let res = await fetch(`https://api.xyroinee.xyz/api/downloader/tiktok?url=${text}&apikey=${global.xyro}`)
+  let res = await fetch(`https://zeltoria.site/api/download/tiktok?url=${text}`)
   let json = await res.json()
   let cap = `*ID:* ${json.data.v_id}\n*Description:* ${json.data.desc}`
   let anu = `*Nickname:* ${json.data.author.author}\n*Name:* ${json.data.author.author_name}`
