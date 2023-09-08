@@ -2,17 +2,9 @@ import fetch from 'node-fetch'
 
 let handler = async (m, { conn, usedPrefix, args, command, text }) => {
 if (!text) throw `Linknya Mana?`
-m.reply(wait)
-try {
-  let res = await fetch(`https://zeltoria.site/api/download/tiktok?url=${text}`)
-  let json = await res.json()
-  let cap = `*ID:* ${json.data.v_id}\n*Description:* ${json.data.desc}`
-  let anu = `*Nickname:* ${json.data.author.author}\n*Name:* ${json.data.author.author_name}`
-  conn.sendMessage(m.chat, { image: { url: json.data.author.author_profile }, caption: anu }, { quoted: m })
-  await conn.sendMessage(m.chat, { video: { url: json.data.other_video_link[1] }, caption: cap }, { quoted: m })
-  } catch (e) {
-  m.reply(`Terjadi Kesalahan, Tidak Dapat Mengambil Data Dari Url/Link Yang Kamu Masukan`)
-  }
+let tiktok = await fetch('https://api.xyroinee.xyz/api/downloader/tiktok?url=${text}apikey=ASjKWQpFVz')
+let result = await tiktok.json()
+conn.sendFile(m.chat, result.data.video, 'anu.mp4', 'username: {result.data.username}\nDescription: ${result.data.description}', m)
   }
 handler.help = ['tiktok']
 handler.tags = ['downloader']
